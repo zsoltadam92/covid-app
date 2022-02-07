@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --font-color: #242424;
+  --primary-color: #4f5059;
+  --primary-light-color: #8c8c8c;
+  --content-color: #f0de77;
+  --secondary-color: #365902;
+  --text-color: #ffffff;
+  --table-row-color: #113059;
+  --table-row-color-light: #26528c;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  color: var(--font-color);
+  background-color: var(--content-color);
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 2px 1.5rem;
+  text-align: center;
+}
+
+.header h2 {
+  color: var(--text-color);
+}
+
+/* Form  */
+.form-container {
+  padding: 1rem;
+  background-color: var(--primary-light-color);
+}
+
+.form-container > form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.form-item {
+  margin-right: 1rem;
+}
+
+.form-item > input {
+  line-height: 2rem;
+  height: 2rem;
+  border: 1px solid #747474;
+  border-radius: 4px;
+  width: 200px;
+  padding: 0 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+button {
+  background: none;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--text-color);
+  background-color: #008f8f;
+}
+
+button:focus {
+  outline: none;
+  background-color: #00c4c4;
+  color: var(--font-color);
+}
+
+/* Tartalom */
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kártya stílus */
+zizi-card {
+  width: 30%;
+  margin: 0.8rem;
+  background-color: #fff;
+  animation: fadeIn 3s;
+}
+
+@media (max-width: 1200px) {
+  zizi-card {
+    width: 50%;
+  }
+}
+
+/* Animáció */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Táblázat */
+table {
+  margin-bottom: 1.25rem;
+  border-collapse: collapse;
+  color: var(--text-color);
+  width: 100%;
+}
+
+tr:nth-child(odd) {
+  background-color: var(--table-row-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--table-row-color-light);
+}
+
+td,
+th {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Diagram */
+#chart-container {
+  margin-bottom: 1.25rem;
+}
+
+#myChart {
+  width: 100%;
+}
+
+.card-content button {
+  width: 25%;
+}
+
+/* Hibaüzenet */
+#country-list-error-message,
+#error-message,
+#chart-error-message {
+  text-align: center;
+  background-color: #c62828;
+  color: var(--text-color);
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  animation: errorFadeIn 1s;
+}
+
+@keyframes errorFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* loading spinner */
+.loader {
+  color: #0935e1;
+  font-size: 20px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
